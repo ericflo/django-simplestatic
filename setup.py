@@ -105,7 +105,7 @@ setup(
     url='https://github.com/ericflo/django-simplestatic',
     license='MIT',
     description='A highly opinionated drop-in library for static file management in Django',
-    long_description=read('README.txt'),
+    long_description=read('README.rst'),
     author='Eric Florenzano',
     author_email='floguy@gmail.com',
     packages=find_packages(exclude=['tests', 'tests.*']),
