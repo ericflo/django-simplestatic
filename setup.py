@@ -100,9 +100,9 @@ def find_package_data(
     return out
 
 setup(
-    name = 'simplestatic',
+    name = 'django-simplestatic',
     version = '0.0.1',
-    url = 'https://github.com/ericflo/simplestatic',
+    url = 'https://github.com/ericflo/django-simplestatic',
     license = 'MIT',
     description = 'Simple static file and compression and S3 library for Django',
     long_description = read('README.txt'),
