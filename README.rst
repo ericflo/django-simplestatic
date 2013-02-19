@@ -96,16 +96,16 @@ want to tweak.  Provided here is a reference of every setting
 Required Settings
 ~~~~~~~~~~~~~~~~~
 
-SIMPLESTATIC_DIR: REQUIRED
+SIMPLESTATIC_DIR:
     The directory where you store all of your static media.
 
-AWS_ACCESS_KEY_ID: REQUIRED
+AWS_ACCESS_KEY_ID:
     Your Amazon Web Services access key.
 
-AWS_SECRET_ACCESS_KEY: REQUIRED
+AWS_SECRET_ACCESS_KEY:
     Your Amazon Web Services secret access key.
 
-AWS_STORAGE_BUCKET_NAME: REQUIRED
+AWS_STORAGE_BUCKET_NAME:
     The S3 bucket in which to store and serve all of your static media.
 
 
