@@ -12,9 +12,9 @@ deal with static media, with extremely minimal configuration, as long as:
 * You don't use any of those fancy CSS precompilers like LESS or SCSS. (This
   may change someday as my personal preferences change.)
 
-If any of the above hold true, then this library probably won't work for you.
-That said, if all of the above do hold true for you, then this app will likely
-be the simplest and best way to handle your static media.
+If any of the above don't hold true, then this library probably won't work for
+you.  That said, if all of the above do hold true for you, then this app will
+likely be the simplest and best way to handle your static media.
 
 
 Installation
