@@ -85,8 +85,9 @@ def compress_css(paths):
 
 
 def compress_js(paths):
-    cmd = '%s %s' % (
+    cmd = '%s --compilation_level %s %s' % (
         conf.CLOSURE_COMPILER_COMMAND,
+        conf.CLOSURE_COMPILATION_LEVEL,
         ' '.join(['--js %s' % (path,) for path in paths]),
     )
     output = subprocess.Popen(
