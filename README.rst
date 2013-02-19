@@ -22,7 +22,23 @@ Installation
 
 1. pip install django-simplestatic
 
-2. In your settings file, set the following values:
+2. Add 'simplestatic' to your INSTALLED_APPS:
+
+.. code-block:: python
+
+    INSTALLED_APPS = (
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.sites',
+        'django.contrib.admin',
+
+        # ... all your installed apps
+
+        'simplestatic',
+    )
+
+3. In your settings file, set the following values:
 
 .. code-block:: python
 
@@ -32,7 +48,7 @@ Installation
     AWS_SECRET_ACCESS_KEY = 'YOUR_SECRET_KEY_HERE'
     AWS_STORAGE_BUCKET_NAME = 'YOUR_STATIC_BUCKET_HERE'
 
-3. In your urls.py, import the simplestatic_debug_urls function and execute it
+4. In your urls.py, import the simplestatic_debug_urls function and execute it
    to the end of your urlpatterns:
 
 .. code-block:: python
@@ -43,7 +59,7 @@ Installation
         # ... all of your url patterns right here
     ) + simplestatic_debug_urls()
 
-4. In your template (or templates) import and use the simplestatic template
+5. In your template (or templates) import and use the simplestatic template
    tags, which might look something like this:
 
 .. code-block:: html+django
@@ -61,7 +77,7 @@ Installation
       {% endsimplestatic %}
     </head>
 
-5. Before you push your code, run the static_sync management command to
+6. Before you push your code, run the static_sync management command to
    compress any CSS and JS and upload the whole directory to S3:
 
 .. code-block:: console
