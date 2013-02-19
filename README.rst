@@ -27,11 +27,15 @@ Installation
     SIMPLESTATIC_DIR = '/path/to/your/static/media/directory'
 
     AWS_ACCESS_KEY_ID = 'YOUR_ACCESS_KEY_HERE'
+
     AWS_SECRET_ACCESS_KEY = 'YOUR_SECRET_KEY_HERE'
+
     AWS_STORAGE_BUCKET_NAME = 'YOUR_STATIC_BUCKET_HERE'
 
 3. In your urls.py, import the simplestatic_debug_urls function and execute it
    to the end of your urlpatterns:
+
+.. code-block:: python
 
     from simplestatic.urls import simplestatic_debug_urls
 
@@ -41,6 +45,8 @@ Installation
 
 4. In your template (or templates) import and use the simplestatic template
    tags, which might look something like this:
+
+.. code-block:: html+django
 
     {% load simplestatic_tags %}
 
