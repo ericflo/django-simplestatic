@@ -24,12 +24,12 @@ Installation
 
 2. In your settings file, set the following values:
 
+.. code-block:: python
+
     SIMPLESTATIC_DIR = '/path/to/your/static/media/directory'
 
     AWS_ACCESS_KEY_ID = 'YOUR_ACCESS_KEY_HERE'
-
     AWS_SECRET_ACCESS_KEY = 'YOUR_SECRET_KEY_HERE'
-
     AWS_STORAGE_BUCKET_NAME = 'YOUR_STATIC_BUCKET_HERE'
 
 3. In your urls.py, import the simplestatic_debug_urls function and execute it
@@ -63,6 +63,8 @@ Installation
 
 5. Before you push your code, run the static_sync management command to
    compress any CSS and JS and upload the whole directory to S3:
+
+.. code-block:: console
 
     python manage.py static_sync
 
