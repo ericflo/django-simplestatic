@@ -100,17 +100,17 @@ def find_package_data(
     return out
 
 setup(
-    name = 'django-simplestatic',
-    version = '0.0.1',
-    url = 'https://github.com/ericflo/django-simplestatic',
-    license = 'MIT',
-    description = 'Simple static file and compression and S3 library for Django',
-    long_description = read('README.txt'),
-    author = 'Eric Florenzano',
-    author_email = 'floguy@gmail.com',
-    packages = find_packages(exclude=['tests', 'tests.*']),
-    package_data = find_package_data('simplestatic', only_in_packages=False),
-    classifiers = [
+    name='django-simplestatic',
+    version='0.0.1',
+    url='https://github.com/ericflo/django-simplestatic',
+    license='MIT',
+    description='A highly opinionated drop-in library for static file management in Django',
+    long_description=read('README.txt'),
+    author='Eric Florenzano',
+    author_email='floguy@gmail.com',
+    packages=find_packages(exclude=['tests', 'tests.*']),
+    package_data=find_package_data('simplestatic', only_in_packages=False),
+    classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
@@ -118,5 +118,6 @@ setup(
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
     ],
-    zip_safe = False,
+    install_requires=['boto >= 2.8.0'],
+    zip_safe=False,
 )
