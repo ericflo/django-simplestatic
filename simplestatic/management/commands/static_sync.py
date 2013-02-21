@@ -85,13 +85,14 @@ class Command(NoArgsCommand):
     def handle_template(self, base, filename):
         with open(filename, 'r') as f:
             tmpl = Template(f.read())
-
         template = filename[len(base) + 1:]
         nodes = tmpl.nodelist.get_nodes_by_type(SimpleStaticNode)
         for node in nodes:
             css, js = node.get_css_js_paths(Context())
-            self.compress_and_upload(template, css, compress_css, 'css')
-            self.compress_and_upload(template, js, compress_js, 'js')
+            if css:
+                self.compress_and_upload(template, css, compress_css, 'css')
+            if js:
+                self.compress_and_upload(template, js, compress_js, 'js')
 
     def walk_tree(self, paths, func):
         while len(paths):
