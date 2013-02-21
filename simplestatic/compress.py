@@ -55,8 +55,8 @@ def debug_url(path):
 
 def prod_url(paths, ext):
     hsh = hash_for_paths(paths)
-    return '//%s.s3.amazonaws.com/%s/%s.%s' % (
-        conf.AWS_STORAGE_BUCKET_NAME,
+    return '//%s/%s/%s.%s' % (
+        conf.SIMPLESTATIC_CUSTOM_DOMAIN,
         conf.SIMPLESTATIC_COMPRESSED_DIR,
         hsh,
         ext,
