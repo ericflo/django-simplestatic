@@ -124,7 +124,12 @@ SIMPLESTATIC_DEBUG_PATH: (Defaults to 'static/')
 SIMPLESTATIC_CUSTOM_DOMAIN: (Defaults to S3 subdomain URL)
     A custom domain from which to serve static media in production. For
     example, you may want to use CloudFront as a CDN in front of your S3
-    bucket.
+    bucket, which can be achieved by
+
+    .. code-block:: python
+
+        SIMPLESTATIC_CUSTOM_DOMAIN = 'asdfasdf.cloudfront.net'
+
 
 SIMPLESTATIC_COMPRESSED_DIR: (Defaults to 'compressed')
     The URL path in S3 to place the compressed and minified versions of the CSS
