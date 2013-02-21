@@ -119,7 +119,12 @@ SIMPLESTATIC_DEBUG: (Defaults to DEBUG)
     this, as by default it's set to the same value as your Django DEBUG value.
 
 SIMPLESTATIC_DEBUG_PATH: (Defaults to 'static/')
-    The URL path from which to serve static media during development. 
+    The URL path from which to serve static media during development.
+
+SIMPLESTATIC_CUSTOM_DOMAIN: (Defaults to S3 subdomain URL)
+    A custom domain from which to serve static media in production. For
+    example, you may want to use CloudFront as a CDN in front of your S3
+    bucket.
 
 SIMPLESTATIC_COMPRESSED_DIR: (Defaults to 'compressed')
     The URL path in S3 to place the compressed and minified versions of the CSS
