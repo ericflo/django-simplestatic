@@ -30,7 +30,7 @@ if not AWS_STORAGE_BUCKET_NAME:
         'You must set AWS_STORAGE_BUCKET_NAME in settings.')
 
 SIMPLESTATIC_CUSTOM_DOMAIN = getattr(settings, 'SIMPLESTATIC_CUSTOM_DOMAIN',
-    '%s.s3.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME))
+    '%s.s3.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,))
 
 CLOSURE_COMPILER_JAR = getattr(settings, 'CLOSURE_COMPILER_JAR', None)
 if not CLOSURE_COMPILER_JAR:
