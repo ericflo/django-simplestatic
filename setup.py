@@ -101,7 +101,7 @@ def find_package_data(
 
 setup(
     name='django-simplestatic',
-    version='0.0.2',
+    version='0.0.3',
     url='https://github.com/ericflo/django-simplestatic',
     license='MIT',
     description='A highly opinionated drop-in library for static file management in Django',
