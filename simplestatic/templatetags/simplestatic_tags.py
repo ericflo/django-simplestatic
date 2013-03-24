@@ -3,7 +3,7 @@ import os
 from django import template
 
 from simplestatic import conf
-from simplestatic.compress import debug_url, css_url, js_url
+from simplestatic.compress import debug_url, prod_url, css_url, js_url
 
 register = template.Library()
 
@@ -28,6 +28,17 @@ class CSSNode(MediaNode):
 
 class JSNode(MediaNode):
     TMPL = JS_TMPL
+
+
+class URLNode(template.Node):
+    def __init__(self, path):
+        self.path = template.Variable(path)
+
+    def render(self, context):
+        if conf.SIMPLESTATIC_DEBUG:
+            return debug_url(self.path.resolve(context))
+        else:
+            return prod_url([self.path.resolve(context)])
 
 
 class SimpleStaticNode(template.Node):
@@ -83,3 +94,9 @@ def compress_css(parser, token):
 def compress_js(parser, token):
     path = token.split_contents()[1]
     return JSNode(path)
+
+
+@register.tag
+def simplestatic_url(parser, token):
+    path = token.split_contents()[1]
+    return URLNode(path)

@@ -53,7 +53,9 @@ def debug_url(path):
     return '%s?devcachebuster=%s' % (url, hsh)
 
 
-def prod_url(paths, ext):
+def prod_url(paths, ext=None):
+    if ext is None:
+        ext = paths[0].rpartition('.')[-1]
     hsh = hash_for_paths(paths)
     return '//%s/%s/%s.%s' % (
         conf.SIMPLESTATIC_CUSTOM_DOMAIN,
