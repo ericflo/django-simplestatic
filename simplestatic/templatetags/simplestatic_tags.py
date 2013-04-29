@@ -3,7 +3,7 @@ import os
 from django import template
 
 from simplestatic import conf
-from simplestatic.compress import debug_url, prod_url, css_url, js_url
+from simplestatic.compress import debug_url, css_url, js_url, url
 
 register = template.Library()
 
@@ -35,10 +35,7 @@ class URLNode(template.Node):
         self.path = template.Variable(path)
 
     def render(self, context):
-        if conf.SIMPLESTATIC_DEBUG:
-            return debug_url(self.path.resolve(context))
-        else:
-            return prod_url([self.path.resolve(context)])
+        return url(self.path.resolve(context))
 
 
 class SimpleStaticNode(template.Node):

@@ -65,6 +65,16 @@ def prod_url(paths, ext=None):
     )
 
 
+def url(path):
+    if conf.SIMPLESTATIC_DEBUG:
+        return debug_url(path)
+    return '//%s/%s/%s' % (
+        conf.SIMPLESTATIC_CUSTOM_DOMAIN,
+        conf.SIMPLESTATIC_COMPRESSED_DIR,
+        path,
+    )
+
+
 def css_url(paths):
     return prod_url(paths, 'css')
 
